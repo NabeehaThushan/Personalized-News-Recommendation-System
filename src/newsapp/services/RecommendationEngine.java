@@ -1,10 +1,11 @@
-package java.services;
+package newsapp.services;
 
 
-import java.models.Article;
-import java.models.Category;
-import java.models.User;
-import java.models.UserPreference;
+import newsapp.models.Category;
+import newsapp.models.UserPreference;
+import newsapp.models.Article;
+import newsapp.models.User;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -39,7 +40,7 @@ public class RecommendationEngine {
 
         for (Category category : preferredCategories) {
             List<Article> articlesForCategory = availableArticles.stream().filter(article -> article.getCategory()==category).limit(3).collect(Collectors.toList());
-            recommendedArticles.add((Article) articlesForCategory);
+            recommendedArticles.addAll(articlesForCategory);
         }
 
         return recommendedArticles;

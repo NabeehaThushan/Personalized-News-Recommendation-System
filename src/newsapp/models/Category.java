@@ -1,4 +1,4 @@
-package java.models;
+package newsapp.models;
 
 
 public enum Category{

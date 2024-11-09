@@ -1,4 +1,4 @@
-package java.services;
+package newsapp.services;
 
 public class ArticleFetcher {
 }

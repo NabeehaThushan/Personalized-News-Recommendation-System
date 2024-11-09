@@ -1,4 +1,4 @@
-package java.models;
+package newsapp.models;
 
 import java.io.*;
 import java.util.ArrayList;

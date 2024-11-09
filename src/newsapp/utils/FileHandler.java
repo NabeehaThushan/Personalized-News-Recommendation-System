@@ -1,4 +1,4 @@
-package java.utils;
+package newsapp.utils;
 
 public class FileHandler {
 }

@@ -1,7 +1,6 @@
-package java.models;
+package newsapp.models;
 
 import java.util.List;
-import java.util.prefs.Preferences;
 
 public class Admin extends User {
     public Admin(String username, String password) {

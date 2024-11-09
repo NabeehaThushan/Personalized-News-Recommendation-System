@@ -1,4 +1,4 @@
-package java.ai;
+package newsapp.ai;
 
 public class AIModel {
 }

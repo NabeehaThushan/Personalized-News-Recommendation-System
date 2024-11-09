@@ -1,4 +1,4 @@
-package java.models;
+package newsapp.models;
 
 import java.util.HashMap;
 import java.util.Map;
