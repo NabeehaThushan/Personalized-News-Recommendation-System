@@ -34,4 +34,8 @@ public class UserPreference {
     }
 
 
+    public void setAllPreferences(Map<Category, Integer> preferences) {
+        this.categoryPreferences = preferences;
+
+    }
 }

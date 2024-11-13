@@ -9,30 +9,46 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+
 public class RecommendationEngineTest {
+
     public static void main(String[] args) {
+        testRecommendationEngine();
+    }
+
+    public static void testRecommendationEngine() {
         // Sample articles
         List<Article> articles = new ArrayList<>();
-        articles.add(new Article("Tech Innovations", "Content about technology", Category.TECHNOLOGY, "TechSource", new Date()));
-        articles.add(new Article("AI Breakthrough", "Content about AI", Category.AI, "AISource", new Date()));
-        articles.add(new Article("Health Benefits of Exercise", "Content about health", Category.HEALTH, "HealthSource", new Date()));
+        articles.add(new Article("AI in Technology", "Exploring AI advancements", Category.TECHNOLOGY, "Tech World", new Date()));
+        articles.add(new Article("Health Benefits of Yoga", "Wellness and mental health", Category.HEALTH, "Health Digest", new Date()));
+        articles.add(new Article("Football World Cup Highlights", "Best moments of the season", Category.SPORTS, "Sports Daily", new Date()));
+        articles.add(new Article("Quantum Physics Discoveries", "Exploring quantum realms", Category.SCIENCE, "Science World", new Date()));
 
-        // User with preferences
+        // User setup with reading history
         User user = new User("johnDoe", "password123");
-        user.getPreferences().setPreference(Category.TECHNOLOGY, 5);
-        user.getPreferences().setPreference(Category.AI, 3);
-        user.getPreferences().setPreference(Category.HEALTH, 1);
+        user.addToReadingHistory(new Article("Advances in AI", "Latest trends in AI and machine learning", Category.TECHNOLOGY, "AI Journal", new Date()));
+        user.addToReadingHistory(new Article("Meditation Benefits", "Mental wellness through meditation", Category.HEALTH, "Wellness Weekly", new Date()));
 
-        // Recommendation engine
+        // Initialize the recommendation engine with available articles
         RecommendationEngine engine = new RecommendationEngine(articles);
+
+        // Test user preference adaptation
+        engine.updateUserPreference(user);
+        System.out.println("Updated user preferences:");
+        user.getPreferences().getAllPreferences().forEach((category, score) ->
+            System.out.println(category + ": " + score)
+        );
 
         // Generate recommendations
         List<Article> recommendations = engine.generateRecommendations(user);
-no
-        // Print recommendations
-        System.out.println("Recommended Articles:");
+
+        // Verify recommendations output
+        System.out.println("\nRecommended Articles for " + user.getUserName() + ":");
         for (Article article : recommendations) {
-            System.out.println(article.getTitle() + " - Category: " + article.getCategory());
+            System.out.println("Title: " + article.getTitle() + " | Category: " + article.getCategory());
         }
+
+        // Shut down the engine after tests
+        engine.shutDown();
     }
 }
