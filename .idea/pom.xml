@@ -1,0 +1,9 @@
+<dependency>
+    <groupId>org.json</groupId>
+    <artifactId>json</artifactId>
+    <version>20210307</version>
+
+    <groupId>org.apache.opennlp</groupId>
+    <artifactId>opennlp-tools</artifactId>
+    <version>1.9.4</version>
+</dependency>

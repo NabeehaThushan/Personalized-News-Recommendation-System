@@ -17,5 +17,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="json" level="project" />
+    <orderEntry type="library" name="apache.opennlp.tools" level="project" />
   </component>
 </module>
