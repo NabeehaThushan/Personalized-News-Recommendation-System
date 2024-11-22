@@ -1,4 +1,36 @@
 [
+  {
+        "title": "AI Advances",
+        "description": "Advancements in technology and AI are remarkable.",
+        "contentOfArticle": "Advancements in technology and AI are remarkable.",
+        "source": "Tech Source",
+        "publishedDate": "2023-11-01",
+        "category": ""
+    },
+    {
+        "title": "Health Tips",
+        "description": "Mental health and wellness for everyone.",
+        "contentOfArticle": "Mental health and wellness for everyone.",
+        "source": "Health Source",
+        "publishedDate": "2023-11-02",
+        "category": ""
+    },
+    {
+        "title": "Football Highlights",
+        "description": "Best moments of the football season.",
+        "contentOfArticle": "Best moments of the football season.",
+        "source": "Sports Source",
+        "publishedDate": "2023-11-03",
+        "category": ""
+    },
+    {
+        "title": "Quantum Physics Discovery",
+        "description": "Recent breakthroughs in quantum mechanics.",
+        "contentOfArticle": "Recent breakthroughs in quantum mechanics.",
+        "source": "Science Daily",
+        "publishedDate": "2023-11-04",
+        "category": ""
+    },
     {
       "title": "",
       "contentOfArticle": "",
