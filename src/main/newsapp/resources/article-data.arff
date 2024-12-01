@@ -1,11 +1,13 @@
 @relation article_data
 
 @attribute length numeric
-@attribute category {TECHNOLOGY, HEALTH, SPORTS, GENERAL}
-@attribute priority {1, 2, 3}  % 1=High, 2=Medium, 3=Low
+@attribute keywords {AI, FITNESS, WELLNESS, NONE}
+@attribute category {TECHNOLOGY, HEALTH, SPORTS, GENERAL, BUSINESS, ENTERTAINMENT}
+@attribute priority {1, 2, 3}
+@attribute views numeric
+@attribute time_spent numeric
+@attribute likes numeric
+@attribute published_date date [yyyy-MM-dd]
 
 @data
-300, TECHNOLOGY, 1
-150, HEALTH, 2
-400, SPORTS, 1
-250, GENERAL, 3
+

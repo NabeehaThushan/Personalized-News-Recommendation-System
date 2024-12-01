@@ -24,8 +24,8 @@ public class AdminTest {
         articles = new ArrayList<>();
 
         // Sample articles
-        Article article1 = new Article("AI Innovations", "Content about AI", Category.TECHNOLOGY, "Tech Source", new Date());
-        Article article2 = new Article("Health Tips", "Content about health", Category.HEALTH, "Health Source", new Date());
+        Article article1 = new Article("AI Innovations", "Content about AI", "content",Category.TECHNOLOGY, "Tech Source", new Date());
+        Article article2 = new Article("Health Tips", "Content about health","content" ,Category.HEALTH, "Health Source", new Date());
         articles.add(article1);
         articles.add(article2);
 
@@ -37,7 +37,7 @@ public class AdminTest {
 
     @Test
     public void testAddArticle() {
-        Article newArticle = new Article("Sports Highlights", "Content about sports", Category.SPORTS, "Sports Source", new Date());
+        Article newArticle = new Article("Sports Highlights", "Content about sports","content", Category.SPORTS, "Sports Source", new Date());
         admin.addArticle(articles, newArticle);
 
         assertTrue(articles.contains(newArticle));

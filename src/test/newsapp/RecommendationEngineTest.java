@@ -2,6 +2,7 @@ package test.newsapp;
 
 import main.newsapp.models.Article;
 import main.newsapp.models.Category;
+import main.newsapp.models.User;
 import main.newsapp.services.RecommendationEngine;
 import main.newsapp.utils.DatabaseHandler;
 
@@ -24,30 +25,29 @@ public class RecommendationEngineTest {
 
         // Sample articles to use in the recommendation engine
         List<Article> mockArticles = List.of(
-                new Article("AI Advancements", "Exploring AI and machine learning.", Category.TECHNOLOGY, "Tech Source", new Date()),
-                new Article("Health Tips", "How to stay healthy during the winter.", Category.HEALTH, "Health Source", new Date())
+                new Article("AI Advancements", "Exploring AI and machine learning.","content", Category.TECHNOLOGY, "Tech Source", new Date()),
+                new Article("Health Tips", "How to stay healthy during the winter.","content" ,Category.HEALTH, "Health Source", new Date())
         );
 
         // Initialize the recommendation engine with mock data
         recommendationEngine = new RecommendationEngine(mockArticles, mockDatabaseHandler);
     }
 
-    @Test
-    public void testPredictArticlePriority() {
-        // Create a sample article
-        Article article = new Article(
-                "Quantum Computing Breakthrough",
-                "Quantum computing is changing technology.",
-                Category.TECHNOLOGY,
-                "Tech Daily",
-                new Date()
-        );
+   @Test
+        public void testGenerateRecommendations() {
+            // Mock user preferences
+            User user = new User("testUser", "password");
+            user.getPreferences().setPreference(Category.TECHNOLOGY, 5);
+            user.getPreferences().setPreference(Category.HEALTH, 3);
 
-        // Call the method
-        int priority = recommendationEngine.predictArticlePriority(article);
+            // Generate recommendations
+            List<Article> recommendations = recommendationEngine.generateRecommendations(user);
 
-        // Assert the priority is in the expected range
-        assertTrue(priority > 0, "Priority should be greater than 0.");
-        System.out.println("Predicted priority: " + priority);
+            // Assert recommendations are based on preferences
+            assertNotNull(recommendations, "Recommendations should not be null.");
+            assertFalse(recommendations.isEmpty(), "Recommendations should not be empty.");
+            assertEquals(Category.TECHNOLOGY, recommendations.get(0).getCategory(),
+                "First recommendation should match the highest preference.");
     }
+
 }

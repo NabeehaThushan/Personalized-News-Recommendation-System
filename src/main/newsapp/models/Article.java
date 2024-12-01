@@ -5,19 +5,20 @@ import java.util.UUID;
 public class Article {
     private String id;
     private String title;
+    private String description;
     private String contentOfArticle;
     private Category category;
     private String source;
     private Date publishedDate;
 
-    public Article(String title, String contentOfArticle, Category category, String source, Date publishedDate) {
+    public Article(String title, String description, String contentOfArticle, Category category, String source, Date publishedDate) {
         this.id = UUID.randomUUID().toString();
         this.title = title;
+        this.description = description;
         this.contentOfArticle = contentOfArticle;
         this.category = category;
         this.source = source;
         this.publishedDate = publishedDate;
-
     }
 
     public String getId() {
@@ -27,17 +28,16 @@ public class Article {
     public String getTitle() {
         return title;
     }
+    public String getDescription() {
+        return description;
+    }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getContentOfArticle() {
         return contentOfArticle;
-    }
-
-    public void setContentOfArticle(String contentOfArticle) {
-        this.contentOfArticle = contentOfArticle;
     }
 
     public Category getCategory() {
@@ -52,33 +52,31 @@ public class Article {
         return source;
     }
 
-    public void setSource(String source) {
-        this.source = source;
-    }
-
     public Date getPublishedDate() {
         return publishedDate;
     }
 
-    public void setPublishedDate(Date publishedDate) {
-        this.publishedDate = publishedDate;
-    }
+    public void categorizeArticle(Article article) {
+    if (article.getCategory() == null) { // If not already categorized
+        String content = article.getContentOfArticle().toLowerCase();
 
-    public void categorize(){
-        if (this.contentOfArticle.contains("technology")){
-            this.category = Category.TECHNOLOGY;
-        } else if (this.contentOfArticle.contains("health")){
-            this.category = Category.HEALTH;
-        } else if (this.contentOfArticle.contains("sports")) {
-            this.category = Category.SPORTS;
-        } else {
-            this.category = Category.GENERAL;
+        for (Category category : Category.values()) {
+            if (category.getKeywords().stream().anyMatch(content::contains)) {
+                article.setCategory(category);
+                return; // Stop checking once a match is found
+            }
         }
-        System.out.println("Article categorized as: " + category);
+
+        // Assign General category if no match
+        article.setCategory(Category.GENERAL);
     }
+}
+
+
 
     @Override
-    public String toString(){
-        return "Article{"+ "title=" + title + ", contentOfArticle=" + contentOfArticle + ", category=" + category + ", source=" + source + ", publishedDate=" + publishedDate + '}';
+    public String toString() {
+        return String.format("Article{id='%s', title='%s', category=%s, source='%s', publishedDate=%s}",
+                id, title, category, source, publishedDate);
     }
 }

@@ -4,6 +4,7 @@ import main.newsapp.exceptions.DuplicateUserException;
 import main.newsapp.exceptions.IncorrectPasswordException;
 import main.newsapp.exceptions.UserNotFoundException;
 import main.newsapp.utils.DatabaseHandler;
+import main.newsapp.utils.DatabaseService;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,8 +13,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class User {
+    private static final Logger logger = LoggerFactory.getLogger(User.class);
     private String userName;
     private String password;
     private List<Article> readingHistory;
@@ -28,120 +32,101 @@ public class User {
         this.readingHistory = new ArrayList<>();
         this.preferences = new UserPreference();
         this.interactions = new HashMap<>();
-
     }
 
     public String getUserName() {
         return userName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public List<Article> getReadingHistory() {
         return readingHistory;
     }
 
-    public void setReadingHistory(List<Article> readingHistory) {
-        this.readingHistory = readingHistory;
-    }
-
     public UserPreference getPreferences() {
         return preferences;
-    }
-
-    public void setPreferences(UserPreference preferences) {
-        this.preferences = preferences;
     }
 
     public Map<Article, String> getInteractions() {
         return interactions;
     }
-
-    public void setInteractions(Map<Article, String> interactions) {
-        this.interactions = interactions;
-    }
-
-    public void addToReadingHistory(Article article){
-        readingHistory.add(article);
-        System.out.println("Added to reading history." + article.getTitle());
-    }
-
-    public void updatePreferences(UserPreference preferences){
+    // Method to set preferences directly
+    public void setPreferences(UserPreference preferences) {
         this.preferences = preferences;
-        System.out.println("User preferences updated.");
+        logger.info("User preferences set directly.");
     }
 
-    public boolean login(DatabaseHandler dbHandler) throws UserNotFoundException, IncorrectPasswordException{
-       // Handle login in a concurrent environment, no synchronized block
-        boolean userExists = dbHandler.userExists(this.userName);
+    public void addToReadingHistory(Article article) {
+        readingHistory.add(article);
+        logger.info("Added to reading history: {}", article.getTitle());
+    }
+
+    public void updatePreferences(UserPreference preferences) {
+        this.preferences = preferences;
+        logger.info("User preferences updated.");
+    }
+
+    public boolean login(DatabaseService dbService) throws UserNotFoundException, IncorrectPasswordException {
+        boolean userExists = dbService.userExists(this.userName);
         if (!userExists) {
             throw new UserNotFoundException("User does not exist.");
         }
 
-        boolean validPassword = dbHandler.validateUser(this.userName, this.password);
+        boolean validPassword = dbService.validateUser(this.userName, this.password);
         if (!validPassword) {
             throw new IncorrectPasswordException("Incorrect password.");
         }
 
-        System.out.println(userName + " logged in successfully.");
+        logger.info("{} logged in successfully.", userName);
         return true;
     }
 
-
-    public void register(DatabaseHandler dbHandler) throws DuplicateUserException {
-        // Register the user without synchronized block, managed by the database handler
-        boolean userExists = dbHandler.userExists(this.userName);
+    public void register(DatabaseService dbService) throws DuplicateUserException {
+        boolean userExists = dbService.userExists(this.userName);
         if (userExists) {
             throw new DuplicateUserException("User already exists.");
         }
 
-        dbHandler.registerUser(this.userName, this.password);
-        System.out.println(userName + " has registered successfully.");
+        dbService.registerUser(this.userName, this.password);
+        logger.info("{} has registered successfully.", userName);
     }
 
-
-    // Concurrent login task
-    public static void concurrentLogin(DatabaseHandler dbHandler, List<User> users) {
+    public static void concurrentLogin(DatabaseService dbService, List<User> users) {
         users.forEach(user -> executorService.submit(() -> {
             try {
-                user.login(dbHandler);
+                user.login(dbService);
             } catch (Exception e) {
-                System.out.println("Error during login for user: " + user.getUserName() + " - " + e.getMessage());
+                logger.error("Error during login for user {}: {}", user.getUserName(), e.getMessage());
             }
         }));
     }
 
-    // Concurrent register task
-    public static void concurrentRegister(DatabaseHandler dbHandler, List<User> users) {
+    public static void concurrentRegister(DatabaseService dbService, List<User> users) {
         users.forEach(user -> executorService.submit(() -> {
             try {
-                user.register(dbHandler);
+                user.register(dbService);
             } catch (Exception e) {
-                System.out.println("Error during registration for user: " + user.getUserName() + " - " + e.getMessage());
+                logger.error("Error during registration for user {}: {}", user.getUserName(), e.getMessage());
             }
         }));
     }
 
-    // Record user interaction with an article
-    public void recordInteraction(Article article, String feedback) {
+    public synchronized void recordInteraction(Article article, String feedback) {
         interactions.put(article, feedback);
-        System.out.println("Recorded interaction for article: " + article.getTitle() + " | Feedback: " + feedback);
+        preferences.addCategory(article.getCategory());
+        logger.info("Recorded interaction for article: {} | Feedback: {}", article.getTitle(), feedback);
     }
 
     public static void shutDownExecutor() {
         executorService.shutdown();
     }
+
+    public void setPassword(String wrongPassword) {
+
+    }
+
+
 }
-
-
-

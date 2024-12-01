@@ -1,6 +1,0 @@
--- Users Table
-INSERT INTO users (username, password) VALUES ('johnDoe', 'password123');
-INSERT INTO users (username, password) VALUES ('janeDoe', 'qwerty123');
-
--- Preferences Table
--- Initially empty; preferences will be updated based on interactions

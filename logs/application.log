@@ -1,0 +1,21 @@
+2024-11-30 14:01:36 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 14:01:36 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 14:01:36 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 14:01:36 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 14:01:42 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 14:01:42 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 14:01:42 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 14:01:42 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 14:01:58 INFO  main.newsapp.models.User - sam has registered successfully.
+2024-11-30 14:02:07 INFO  main.newsapp.models.User - Added to reading history: Exploring the Ethics of AI in Healthcare
+2024-11-30 14:02:07 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user sam: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-11-30 14:02:35 INFO  main.newsapp.models.User - Recorded interaction for article: Exploring the Ethics of AI in Healthcare | Feedback: 4
+2024-11-30 14:33:22 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 14:33:22 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 14:33:22 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 14:33:23 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 14:34:05 INFO  main.newsapp.models.User - User preferences set directly.
+2024-11-30 14:34:35 INFO  main.newsapp.models.User - Gordon has registered successfully.
+2024-11-30 14:34:48 INFO  main.newsapp.models.User - Added to reading history: Women’s Rights in the Modern World
+2024-11-30 14:34:48 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user Gordon: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-11-30 14:34:57 INFO  main.newsapp.models.User - Recorded interaction for article: Women’s Rights in the Modern World | Feedback: 4

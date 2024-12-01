@@ -1,0 +1,618 @@
+2024-11-30 14:38:59 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 14:38:59 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 14:38:59 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 14:38:59 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 14:39:11 INFO  main.newsapp.models.User - nabeeha logged in successfully.
+2024-11-30 14:39:33 INFO  main.newsapp.models.User - Added to reading history: Advancements in Space Tourism
+2024-11-30 14:39:33 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user nabeeha: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-11-30 14:39:36 INFO  main.newsapp.models.User - Recorded interaction for article: Advancements in Space Tourism | Feedback: 5
+2024-11-30 16:51:26 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 16:51:26 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 16:51:26 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 16:51:26 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 16:54:07 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 16:54:07 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 16:54:07 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 16:54:07 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:00:33 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 17:00:33 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 17:01:13 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:01:21 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:01:21 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 17:01:21 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 17:01:21 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:06:04 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:06:04 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 17:06:04 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 17:06:04 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:06:29 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:06:29 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 17:06:29 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 17:06:29 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:06:33 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:08:03 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:18:53 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:21:36 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 17:22:37 INFO  main.newsapp.models.User - Added to reading history: Sample Title
+2024-11-30 17:22:37 INFO  main.newsapp.models.User - User preferences updated.
+2024-11-30 17:22:37 INFO  main.newsapp.models.User - testUser logged in successfully.
+2024-11-30 18:04:40 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 18:04:40 WARN  main.newsapp.models.Admin - Admin attempted to add an existing article: New Article
+2024-11-30 18:04:40 INFO  main.newsapp.models.User - User preferences set directly.
+2024-11-30 18:04:40 INFO  main.newsapp.models.User - Added to reading history: Article 1
+2024-11-30 18:04:40 INFO  main.newsapp.models.User - Added to reading history: Article 2
+2024-11-30 18:04:40 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 18:04:40 INFO  main.newsapp.models.Admin - Admin added a new article: New Article
+2024-11-30 18:05:55 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:05:55 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:05:55 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:05:55 INFO  main.newsapp.utils.FileHandler - Successfully fetched 1 articles from file.
+2024-11-30 18:06:53 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:06:53 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:06:53 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:06:53 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:12:49 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:12:49 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:12:49 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:12:49 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:24:02 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:24:02 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:24:02 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:24:02 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:30:20 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:30:20 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:30:20 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:30:21 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:30:35 INFO  main.newsapp.models.User - nabeeha logged in successfully.
+2024-11-30 18:33:57 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:33:57 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:33:57 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:33:57 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:34:11 INFO  main.newsapp.models.User - nabeeha logged in successfully.
+2024-11-30 18:34:27 INFO  main.newsapp.models.User - Added to reading history: Mars Rover’s Latest Findings: Search for Life
+2024-11-30 18:34:27 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user nabeeha: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-11-30 18:34:30 INFO  main.newsapp.models.User - Recorded interaction for article: Mars Rover’s Latest Findings: Search for Life | Feedback: 4
+2024-11-30 18:35:02 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:35:02 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:35:02 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:35:02 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:35:26 INFO  main.newsapp.models.User - jk logged in successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:52:15 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:52:15 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User1 has registered successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User2 has registered successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User3 has registered successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User4 has registered successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User5 has registered successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-11-30 18:52:15 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-11-30 18:52:16 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-11-30 18:52:16 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-11-30 18:52:16 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-11-30 18:52:16 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-11-30 18:52:16 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-11-30 18:56:41 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-11-30 18:56:41 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-11-30 18:56:41 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-11-30 18:56:41 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-11-30 18:56:41 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-11-30 18:56:41 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-11-30 18:56:41 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-11-30 18:56:41 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-11-30 18:56:41 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-11-30 18:56:53 INFO  main.newsapp.models.User - johndoe logged in successfully.
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 WARN  main.newsapp.models.Admin - Admin attempted to add an existing article: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - User preferences set directly.
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 19:20:53 INFO  main.newsapp.models.Admin - Admin added a new article: Sports Highlights
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:20:53 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 WARN  main.newsapp.models.Admin - Admin attempted to add an existing article: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - User preferences set directly.
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-11-30 19:25:15 INFO  main.newsapp.models.Admin - Admin added a new article: Sports Highlights
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-11-30 19:25:15 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:12:59 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:12:59 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:12:59 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:12:59 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:31:08 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/test/resources/test-articles.json
+2024-12-01 00:31:08 ERROR main.newsapp.utils.FileHandler - Error reading or parsing the file: src/test/resources/test-articles.json
+java.nio.file.NoSuchFileException: src\test\resources\test-articles.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3273)
+	at main.newsapp.utils.FileHandler.fetchArticlesFromFile(FileHandler.java:46)
+	at test.newsapp.AdminTest.setUp(AdminTest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-01 00:31:08 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/test/resources/test-articles.json
+2024-12-01 00:31:08 ERROR main.newsapp.utils.FileHandler - Error reading or parsing the file: src/test/resources/test-articles.json
+java.nio.file.NoSuchFileException: src\test\resources\test-articles.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3273)
+	at main.newsapp.utils.FileHandler.fetchArticlesFromFile(FileHandler.java:46)
+	at test.newsapp.AdminTest.setUp(AdminTest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-01 00:31:08 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/test/resources/test-articles.json
+2024-12-01 00:31:08 ERROR main.newsapp.utils.FileHandler - Error reading or parsing the file: src/test/resources/test-articles.json
+java.nio.file.NoSuchFileException: src\test\resources\test-articles.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:379)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:431)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3273)
+	at main.newsapp.utils.FileHandler.fetchArticlesFromFile(FileHandler.java:46)
+	at test.newsapp.AdminTest.setUp(AdminTest.java:29)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:520)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:505)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:174)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:202)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:202)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:171)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:134)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-01 00:31:09 ERROR main.newsapp.utils.FileHandler - Error saving articles to file: src/test/resources/test-articles.json
+java.nio.file.NoSuchFileException: src\test\resources\test-articles.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:227)
+	at java.base/java.nio.file.Files.write(Files.java:3497)
+	at main.newsapp.utils.FileHandler.saveArticlesToFile(FileHandler.java:97)
+	at main.newsapp.models.Admin.addArticle(Admin.java:24)
+	at test.newsapp.AdminTest.testAddArticle(AdminTest.java:42)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-01 00:31:09 INFO  main.newsapp.models.Admin - Admin added a new article: Sports Highlights
+2024-12-01 00:31:09 ERROR main.newsapp.utils.FileHandler - Error saving articles to file: src/test/resources/test-articles.json
+java.nio.file.NoSuchFileException: src\test\resources\test-articles.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:234)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:227)
+	at java.base/java.nio.file.Files.write(Files.java:3497)
+	at main.newsapp.utils.FileHandler.saveArticlesToFile(FileHandler.java:97)
+	at test.newsapp.AdminTest.testAddArticle(AdminTest.java:45)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38)
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11)
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35)
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232)
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55)
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:49 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:49 WARN  main.newsapp.models.Admin - Admin attempted to add an existing article: AI Innovations
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - User preferences set directly.
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:49 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:49 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 00:33:50 INFO  main.newsapp.models.Admin - Admin added a new article: Sports Highlights
+2024-12-01 00:33:50 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:33:50 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 00:35:00 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 00:35:00 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 00:35:00 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 00:35:38 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 00:35:38 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 00:35:38 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 00:36:05 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 00:36:05 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 00:36:05 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 00:36:05 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-12-01 00:36:05 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-01 00:36:05 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-01 00:36:05 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-01 00:36:05 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-01 00:36:05 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-01 10:43:23 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:43:23 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:43:23 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:43:23 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 WARN  main.newsapp.models.Admin - Admin attempted to add an existing article: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - User preferences set directly.
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-01 10:45:44 INFO  main.newsapp.models.Admin - Admin added a new article: Sports Highlights
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 10:45:44 INFO  main.newsapp.models.User - Added to reading history: AI Innovations
+2024-12-01 11:01:05 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 11:01:05 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 11:01:05 INFO  m.n.services.RecommendationEngine - No preferences found for user. Suggesting random articles.
+2024-12-01 11:02:58 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 11:02:58 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 11:02:58 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 11:02:58 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-12-01 11:02:58 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-01 11:02:58 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-01 11:02:58 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-01 11:02:58 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-01 11:02:58 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-01 11:03:14 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 11:03:14 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-12-01 11:03:14 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-01 11:03:14 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-01 11:03:30 INFO  main.newsapp.models.User - nabeeha logged in successfully.
+2024-12-01 11:04:12 INFO  main.newsapp.models.User - Added to reading history: Global Financial Crisis: Lessons Learned
+2024-12-01 11:04:12 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user nabeeha: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-12-01 11:04:16 INFO  main.newsapp.models.User - Recorded interaction for article: Global Financial Crisis: Lessons Learned | Feedback: 5
+2024-12-01 11:17:41 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-01 11:17:41 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.

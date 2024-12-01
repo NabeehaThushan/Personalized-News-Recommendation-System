@@ -4,12 +4,18 @@ import main.newsapp.models.Article;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
 import java.util.List;
+
+import opennlp.tools.tokenize.SimpleTokenizer;
+import opennlp.tools.stemmer.PorterStemmer;
 
 import main.newsapp.models.Category;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
+
 import main.newsapp.utils.FileHandler;
 import opennlp.tools.tokenize.SimpleTokenizer;
 
@@ -17,10 +23,11 @@ public class ArticleFetcher {
     private List<Article> articles;
     private FileHandler fileHandler;
     private ExecutorService executorService;
+
     public ArticleFetcher() {
         this.fileHandler = new FileHandler();
         this.articles = new ArrayList<>();
-        this.executorService = Executors.newFixedThreadPool(4);
+        this.executorService = Executors.newFixedThreadPool(4); // Thread pool with a fixed size
     }
 
     // Get the list of articles
@@ -30,9 +37,8 @@ public class ArticleFetcher {
         return articles;
     }
 
-
-     public void categorizeArticlesWithNLP() {
-       List<Runnable> tasks = new ArrayList<>();
+    public void categorizeArticlesWithNLP() {
+        List<Runnable> tasks = new ArrayList<>();
 
         for (Article article : articles) {
             tasks.add(() -> categorizeArticle(article));
@@ -43,29 +49,47 @@ public class ArticleFetcher {
 
         try {
             executorService.shutdown();
-            executorService.awaitTermination(1, TimeUnit.MINUTES);  // Wait for all tasks to finish
+            if (!executorService.awaitTermination(1, TimeUnit.MINUTES)) {
+                System.err.println("Timeout occurred while categorizing articles.");
+            }
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            Thread.currentThread().interrupt();
+            System.err.println("Thread was interrupted: " + e.getMessage());
         }
     }
 
-    private void categorizeArticle(Article article) {
-        SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
-        String content = article.getContentOfArticle().toLowerCase();
-        String[] tokens = tokenizer.tokenize(content);
+    public void categorizeArticle(Article article) {
+        if (article.getCategory() == null) { // If not already categorized
+            String content = article.getContentOfArticle().toLowerCase();
 
-        if (containsKeywords(tokens, new String[]{"technology", "ai", "machine learning"})) {
-            article.setCategory(Category.TECHNOLOGY);
-        } else if (containsKeywords(tokens, new String[]{"health", "wellness", "mental"})) {
-            article.setCategory(Category.HEALTH);
-        } else if (containsKeywords(tokens, new String[]{"sports", "football", "basketball"})) {
-            article.setCategory(Category.SPORTS);
-        } else if (containsKeywords(tokens, new String[]{"quantum", "physics", "science"})) {
-            article.setCategory(Category.SCIENCE);
-        } else {
+            // Tokenize the content
+            SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
+            String[] tokens = tokenizer.tokenize(content);
+
+            // Stem the tokens
+            PorterStemmer stemmer = new PorterStemmer();
+            List<String> stemmedTokens = Arrays.stream(tokens)
+                                               .map(stemmer::stem)
+                                               .collect(Collectors.toList());
+
+            // Match against category keywords
+            for (Category category : Category.values()) {
+                for (String keyword : category.getKeywords()) {
+                    String stemmedKeyword = stemmer.stem(keyword.toLowerCase());
+                    if (stemmedTokens.contains(stemmedKeyword)) {
+                        article.setCategory(category);
+                        return; // Stop checking once a match is found
+                    }
+                }
+            }
+
+            // Default to GENERAL if no match
             article.setCategory(Category.GENERAL);
         }
     }
+
+
+
     // Helper method to check for any matching keywords
     public boolean containsKeywords(String[] tokens, String[] keywords) {
         for (String token : tokens) {
@@ -81,5 +105,14 @@ public class ArticleFetcher {
     public void setArticles(List<Article> testArticles) {
         this.articles = testArticles;
     }
-}
 
+    public void shutDownExecutor() {
+        try {
+            executorService.shutdown();
+            executorService.awaitTermination(1, TimeUnit.MINUTES);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            System.err.println("Error shutting down executor service: " + e.getMessage());
+        }
+    }
+}

@@ -5,11 +5,13 @@ import main.newsapp.models.Category;
 import main.newsapp.models.User;
 import main.newsapp.utils.DatabaseHandler;
 
+import main.newsapp.utils.DatabaseService;
 import opennlp.tools.tokenize.SimpleTokenizer;
 import weka.classifiers.Classifier;
 import weka.classifiers.trees.J48;
 import weka.core.*;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileReader;
@@ -20,158 +22,217 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static main.newsapp.models.User.executorService;
+
 public class RecommendationEngine {
+    private static final Logger logger = LoggerFactory.getLogger(RecommendationEngine.class);
+
     private List<Article> availableArticles;
-    private DatabaseHandler databaseHandler;
-    private final ExecutorService executorService = Executors.newCachedThreadPool();
+    private DatabaseService databaseService;
     private Classifier mlModel;
+    private ExecutorService executorService;
+     // Flag to toggle ML-based recommendation or not
 
-    public RecommendationEngine(List<Article> availableArticles, DatabaseHandler databaseHandler) {
+    public RecommendationEngine(List<Article> availableArticles, DatabaseService databaseService) {
         this.availableArticles = availableArticles;
-        this.databaseHandler = databaseHandler;
-        loadMLModel();
+        this.databaseService = databaseService;
+        this.executorService = Executors.newCachedThreadPool();
+        processArticles();
+
     }
 
-    // Load a pre-trained ML model
-    private void loadMLModel() {
-        try {
-            mlModel = (Classifier) weka.core.SerializationHelper.read("src/main/newsapp/resources/ml-model.model");
-        } catch (Exception e) {
-            System.out.println("Error loading ML model: " + e.getMessage());
-            e.printStackTrace();
-        }
-    }
 
-    // Generate recommendations for a user
-    public List<Article> generateRecommendations(User user) {
-        databaseHandler.loadPreferences(user);
-        updateUserPreference(user);
-        List<Article> recommendations = new ArrayList<>();
-
-        try {
-            CompletableFuture<Map<Category, Integer>> categoryPreferencesFuture =
-                    CompletableFuture.supplyAsync(() -> user.getPreferences().getAllPreferences(), executorService);
-
-            Map<Category, Integer> sortedPreferences = categoryPreferencesFuture.get().entrySet().stream()
-                    .sorted(Map.Entry.<Category, Integer>comparingByValue().reversed())
-                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
-
-            CompletableFuture<?>[] recommendationFutures = sortedPreferences.keySet().stream().map(category ->
-                    CompletableFuture.runAsync(() -> recommendations.addAll(getArticlesByCategory(category, 3)), executorService)
-            ).toArray(CompletableFuture[]::new);
-            CompletableFuture.allOf(recommendationFutures).join();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return recommendations.stream().distinct().collect(Collectors.toList());
-    }
-
-    // Update user preferences based on reading history
+    // Update user preferences based on their reading history
     public void updateUserPreference(User user) {
-        try {
-            Map<Category, Integer> preferences = user.getPreferences().getAllPreferences();
-
-            for (Article article : user.getReadingHistory()) {
-                Category category = categorizeWithNLP(article.getContentOfArticle());
-                preferences.merge(category, 1, Integer::sum);
-            }
-
-            user.getPreferences().setAllPreferences(preferences);
-            databaseHandler.storePreferences(user);
-        } catch (Exception e) {
-            System.out.println("Error updating user preferences: " + e.getMessage());
-            e.printStackTrace();
+//        Map<Category, Integer> preferences = user.getPreferences().getAllPreferences();
+//        for (Article article : user.getReadingHistory()) {
+//            Category category = categorizeWithNLP(article.getContentOfArticle());
+//            preferences.merge(category, 1, Integer::sum);  // Increment preference score
+//        }
+//        user.getPreferences().setAllPreferences(preferences);
+//        databaseService.storePreferences(user);
+        for (Article article : user.getReadingHistory()) {
+            user.getPreferences().addCategory(article.getCategory());
         }
+        databaseService.storePreferences(user);
+
     }
 
-    // Categorize articles using NLP
-    private Category categorizeWithNLP(String content) {
-        SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
-        String[] tokens = tokenizer.tokenize(content.toLowerCase());
+    public void categorizeArticle(Article article) {
+    if (article.getCategory() == null) { // If not already categorized
+        String content = article.getContentOfArticle().toLowerCase();
 
-        if (Arrays.asList(tokens).contains("technology")) return Category.TECHNOLOGY;
-        if (Arrays.asList(tokens).contains("health")) return Category.HEALTH;
-        if (Arrays.asList(tokens).contains("sports")) return Category.SPORTS;
-        return Category.GENERAL;
-    }
+        for (Category category : Category.values()) {
+            if (category.getKeywords().stream().anyMatch(content::contains)) {
+                article.setCategory(category);
+                return; // Stop checking once a match is found
+            }
+        }
 
-    // Get articles by category with an ML model for prioritization
-    private List<Article> getArticlesByCategory(Category category, int limit) {
-        return availableArticles.parallelStream()
-                .filter(article -> article.getCategory() == category)
-                .sorted((a1, a2) -> predictArticlePriority(a2) - predictArticlePriority(a1))
-                .limit(limit)
-                .collect(Collectors.toList());
-    }
-
-    // Predict article priority using ML
-    public int predictArticlePriority(Article article) {
-    try {
-        // Load the ARFF dataset
-        File arffFile = new File("src/main/newsapp/resources/article-data.arff");
-        Instances dataset = new Instances(new FileReader(arffFile));
-        dataset.setClassIndex(dataset.numAttributes() - 1); // Set the last attribute as the class
-
-        // Create a new instance and add it to the dataset
-        Instance instance = new DenseInstance(dataset.numAttributes());
-        instance.setValue(dataset.attribute("length"), article.getContentOfArticle().length());
-        instance.setValue(dataset.attribute("category"), article.getCategory().name());
-        dataset.add(instance); // Add the instance to the dataset
-
-        // Use the model to classify the instance
-        double priority = mlModel.classifyInstance(dataset.lastInstance());
-        return (int) priority; // Convert the predicted value to an integer
-    } catch (Exception e) {
-        System.err.println("Error in predictArticlePriority: " + e.getMessage());
-        e.printStackTrace();
-        return 0; // Default priority if classification fails
+        // Assign General category if no match
+        article.setCategory(Category.GENERAL);
     }
 }
 
-    // Get articles based on user's preferences (Content-based filtering)
-    private List<Article> getArticlesByUserPreferences(Map<Category, Integer> sortedPreferences) {
-        List<Article> recommendations = new ArrayList<>();
+    private Category categorizeWithNLP(String content) {
+    SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
+    String[] tokens = tokenizer.tokenize(content.toLowerCase());
 
+    for (Category category : Category.values()) {
+        if (containsKeywords(tokens, category.getKeywords())) {
+            return category; // Return the first matching category
+        }
+    }
+
+    return Category.GENERAL; // Default to General if no match
+}
+
+// Helper method to check if any tokens match a category's keywords
+private boolean containsKeywords(String[] tokens, List<String> keywords) {
+    for (String token : tokens) {
+        if (keywords.contains(token)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+    // Get articles based on user preferences (Content-based filtering)
+    private List<Article> getArticlesByUserPreferences(User user) {
+        Map<Category, Integer> sortedPreferences = user.getPreferences().getAllPreferences().entrySet().stream()
+                .sorted(Map.Entry.<Category, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+
+        List<Article> recommendations = new ArrayList<>();
         for (Map.Entry<Category, Integer> entry : sortedPreferences.entrySet()) {
             Category preferredCategory = entry.getKey();
-            List<Article> filteredArticles = availableArticles.stream()
+            recommendations.addAll(availableArticles.stream()
                     .filter(article -> article.getCategory() == preferredCategory)
-                    .collect(Collectors.toList());
-
-            recommendations.addAll(filteredArticles);
+                    .collect(Collectors.toList()));
         }
-
         return recommendations;
     }
 
-    // Get articles based on KNN (Collaborative Filtering)
-    private List<Article> getArticlesByKNN(User user) {
-        List<Article> recommendations = new ArrayList<>();
+    /**
+     * Retrieves articles based on the user's reading history.
+     *
+     * @param user the user for whom articles are being fetched
+     * @return a list of articles related to the user's reading history
+     */
+    private List<Article> getArticlesByUserHistory(User user) {
+        Set<Category> historyCategories = user.getReadingHistory().stream()
+                .map(Article::getCategory)
+                .collect(Collectors.toSet());
 
-        // Implement KNN here (or use a pre-trained model)
-        // For now, we'll just recommend articles from the top preferences
-        Category topCategory = user.getPreferences().getTopPreference();
-
-        List<Article> knnRecommendations = availableArticles.stream()
-                .filter(article -> article.getCategory() == topCategory)
+        return availableArticles.stream()
+                .filter(article -> historyCategories.contains(article.getCategory()))
                 .collect(Collectors.toList());
-
-        recommendations.addAll(knnRecommendations);
-        return recommendations;
     }
 
-    public void shutDown() {
+    public List<Article> generateRecommendations(User user) {
+    // Load user preferences and history
+    databaseService.loadPreferences(user);
+    databaseService.loadReadingHistory(user, availableArticles);
+
+    // Fetch user-specific ratings for prioritization
+    Map<String, Integer> userRatings = databaseService.getUserRatings(user.getUserName());
+
+    // Step 1: Handle fallback for new users (if no preferences or history)
+    if (user.getPreferences().getAllPreferences().isEmpty() && userRatings.isEmpty()) {
+        logger.info("No preferences found for user. Suggesting random articles.");
+        return availableArticles.stream().limit(5).collect(Collectors.toList());
+    }
+
+    // Step 2: Get recommendations from preferences and history
+    List<Article> contentBasedRecommendations = getArticlesByUserPreferences(user);
+    List<Article> historyBasedRecommendations = getArticlesByUserHistory(user);
+
+    // Step 3: Combine recommendations and remove duplicates
+    Set<Article> combinedRecommendations = new LinkedHashSet<>();
+    combinedRecommendations.addAll(historyBasedRecommendations); // Prioritize recent history
+    combinedRecommendations.addAll(contentBasedRecommendations);
+
+    // Step 4: Filter out articles already in the user's reading history
+    List<Article> filteredRecommendations = combinedRecommendations.stream()
+            .filter(article -> user.getReadingHistory().stream()
+                    .noneMatch(read -> read.getId().equals(article.getId())))
+            .collect(Collectors.toList());
+
+    // Step 5: Limit recommendations to 5 and return
+    return filteredRecommendations.stream()
+            .distinct() // Ensure no duplicates
+            .limit(7) // Limit recommendations to 5
+            .collect(Collectors.toList());
+}
+
+    private List<Article> getArticlesByKNN(User user) {
+    List<Article> recommendations = new ArrayList<>();
+    Map<Category, Integer> preferences = user.getPreferences().getAllPreferences();
+
+    preferences.entrySet().stream()
+            .sorted(Map.Entry.<Category, Integer>comparingByValue().reversed())
+            .limit(3) // Consider top 3 categories
+            .forEach(entry -> {
+                Category category = entry.getKey();
+                recommendations.addAll(availableArticles.stream()
+                        .filter(article -> article.getCategory() == category)
+                        .collect(Collectors.toList()));
+            });
+
+    return recommendations.stream()
+            .distinct()
+            .limit(5) // Limit recommendations to 5
+            .collect(Collectors.toList());
+}
+
+
+
+    // Rank articles by ML model if available
+    private List<Article> rankArticlesByML(List<Article> articles) {
         try {
-            executorService.shutdown();
-            executorService.awaitTermination(1, TimeUnit.MINUTES);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } finally {
-            if (!executorService.isTerminated()) {
+            Instances dataset = loadArffDataset();
+            for (Article article : articles) {
+                Instance instance = new DenseInstance(dataset.numAttributes());
+                instance.setValue(dataset.attribute("length"), article.getContentOfArticle().length());
+                instance.setValue(dataset.attribute("category"), article.getCategory().name());
+                dataset.add(instance);
+                double priority = mlModel.classifyInstance(dataset.lastInstance());
+                article.setCategory(Category.values()[(int) priority]); // Set article priority based on ML
+            }
+        } catch (Exception e) {
+            logger.error("Error in ranking articles using ML model: {}", e.getMessage());
+        }
+        return articles;
+    }
+
+    // Load ARFF dataset for ML-based prediction
+    private Instances loadArffDataset() throws Exception {
+        File arffFile = new File("src/main/newsapp/resources/article-data.arff");
+        Instances dataset = new Instances(new FileReader(arffFile));
+        dataset.setClassIndex(dataset.numAttributes() - 1); // Set the last attribute as the class
+        return dataset;
+    }
+
+    /**
+     * Processes articles concurrently, categorizing them for recommendation.
+     */
+    public void processArticles() {
+        executorService.submit(() -> availableArticles.forEach(this::categorizeArticle));
+    }
+
+    /**
+     * Shuts down the executor service used for concurrency.
+     */
+    public void shutDown() {
+        executorService.shutdown();
+        try {
+            if (!executorService.awaitTermination(1, TimeUnit.MINUTES)) {
                 executorService.shutdownNow();
             }
+        } catch (InterruptedException e) {
+            logger.error("Error shutting down executor service: {}", e.getMessage());
+            executorService.shutdownNow();
         }
     }
 }
