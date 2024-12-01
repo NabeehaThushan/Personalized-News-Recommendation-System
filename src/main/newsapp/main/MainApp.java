@@ -85,7 +85,7 @@ public class MainApp {
 
 
     // Simulate user actions for a given username and password
-    private static void simulateUserActions(String username, String password) {
+    public static void simulateUserActions(String username, String password) {
     System.out.println(Thread.currentThread().getName() + ": " + username + " is attempting to log in...");
 
     User user = new User(username, password);
@@ -113,7 +113,7 @@ public class MainApp {
 
 
     // Perform various user actions (view, recommend, update preferences)
-    private static void performUserActions(User user) throws InterruptedException {
+    public static void performUserActions(User user) throws InterruptedException {
         // Simulate viewing articles
         System.out.println(user.getUserName() + " is viewing articles...");
         Thread.sleep(1000); // Simulate time delay
@@ -581,4 +581,19 @@ public static void printFormattedContent(String content) {
             System.out.println("No user logged in.");
         }
     }
+
+     public static void setDbService(DatabaseService dbService) {
+        MainApp.dbService = dbService;
+    }
+
+    public static void setRecommendationEngine(RecommendationEngine recommendationEngine) {
+        MainApp.recommendationEngine = recommendationEngine;
+    }
+
+    public static void setAvailableArticles(List<Article> articles) {
+    MainApp.availableArticles = articles;
+}
+
+
+
 }
