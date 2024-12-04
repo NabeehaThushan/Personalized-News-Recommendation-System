@@ -205,20 +205,29 @@ public class MainApp {
     }
 
     public static void register() {
-        System.out.print("Enter username: ");
-        String username = scanner.nextLine();
-        System.out.print("Enter password: ");
-        String password = scanner.nextLine();
+    System.out.print("Enter username: ");
+    String username = scanner.nextLine();
 
-        try {
-            currentUser = new User(username, password);
-            currentUser.register(dbService);
-            System.out.println("Registration successful.  Redirecting to the main menu....");
-            showArticleMenu();
-        } catch (DuplicateUserException e) {
-            System.out.println("Error during registration: " + e.getMessage());
+    String password;
+    while (true) {
+        System.out.print("Enter password: ");
+        password = scanner.nextLine();
+        if (password.trim().isEmpty()) {
+            System.out.println("Password cannot be empty. Please enter a valid password.");
+        } else {
+            break;
         }
     }
+
+    try {
+        currentUser = new User(username, password);
+        currentUser.register(dbService);
+        System.out.println("Registration successful. Redirecting to the main menu....");
+        showArticleMenu();
+    } catch (DuplicateUserException e) {
+        System.out.println("Error during registration: " + e.getMessage());
+    }
+}
 
     public static void login() {
     if (currentUser != null) {
