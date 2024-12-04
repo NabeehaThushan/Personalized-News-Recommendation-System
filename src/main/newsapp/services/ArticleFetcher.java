@@ -44,9 +44,14 @@ public class ArticleFetcher {
             tasks.add(() -> categorizeArticle(article));
         }
 
-        // Execute tasks concurrently
-        tasks.forEach(executorService::submit);
-
+       // Execute tasks concurrently
+        tasks.forEach(task -> {
+            if (!executorService.isShutdown()) { // Check if executor is still running
+                executorService.submit(task);
+            } else {
+                throw new IllegalStateException("ExecutorService has already been shut down!");
+            }
+        });
         try {
             executorService.shutdown();
             if (!executorService.awaitTermination(1, TimeUnit.MINUTES)) {
