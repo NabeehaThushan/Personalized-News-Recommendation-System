@@ -41,6 +41,7 @@ public class MainApp {
     }
 
     // Simulate multiple concurrent users
+    //This shows that multiple users can log in at the same time and the program does different task at the same time
     private static void simulateConcurrentUsers() {
     int numberOfSimulatedUsers = 5; // Simulate 5 concurrent users
     ExecutorService executorService = Executors.newFixedThreadPool(numberOfSimulatedUsers);
@@ -136,7 +137,7 @@ public class MainApp {
 
     public static void showLoginRegisterMenu() {
     System.out.println("\nChoose an option:");
-    System.out.println("1. Register");
+    System.out.println("\n1. Register");
     System.out.println("2. Login");
     System.out.println("3. Admin Login");
     System.out.println("4. Exit");
@@ -146,7 +147,7 @@ public class MainApp {
         System.out.println("You are already logged in as: " + currentUser.getUserName());
         // Option to log out or proceed
         System.out.println("5. Log Out");
-        int choice = getIntInput("Enter your choice: ");
+        int choice = getIntInput("\nEnter your choice: ");
         switch (choice) {
             case 1:
                 System.out.println("You are already logged in. No need to register again.");
@@ -163,14 +164,14 @@ public class MainApp {
                 logOut();
                 break;
             case 5:
-                System.out.println("Exiting program...");
+                System.out.println("Exiting program... Thanks for using our system!!>o<.");
                 System.exit(0);
                 break;
             default:
-                System.out.println("Invalid option. Please try again.");
+                System.out.println("Invalid option. Please try again:(");
         }
     } else {
-        int choice = getIntInput("Enter your choice: ");
+        int choice = getIntInput("\nEnter your choice: ");
         switch (choice) {
             case 1:
                 register();
@@ -179,7 +180,7 @@ public class MainApp {
                 login();
                 break;
             case 3:
-                adminLogin(); // Correctly call the admin login function
+                adminLogin();
                 break;
             case 4:
                 System.out.println("Exiting program...");
@@ -225,13 +226,13 @@ public class MainApp {
         System.out.println("Registration successful. Redirecting to the main menu....");
         showArticleMenu();
     } catch (DuplicateUserException e) {
-        System.out.println("Error during registration: " + e.getMessage());
+        System.out.println("Error during registration: " + e.getMessage()) ;
     }
 }
 
     public static void login() {
     if (currentUser != null) {
-        System.out.println("You are already logged in.");
+        System.out.println("You are already logged in.'0'");
         return;
     }
 
@@ -288,8 +289,8 @@ public class MainApp {
 
     public static void showAdminMenu() {
         while (true) {
-            System.out.println("\nAdmin Menu:");
-            System.out.println("1. Add Article");
+            System.out.println("\n~~Admin Menu~~:");
+            System.out.println("\n1. Add Article");
             System.out.println("2. Remove Article");
             System.out.println("3. List All Articles");
             System.out.println("4. View User Activity");
@@ -314,7 +315,7 @@ public class MainApp {
                     resetUserPreferences();
                     break;
                 case 6:
-                    System.out.println("Logging out of admin view...");
+                    System.out.println("Logging out of admin view...Byeee");
                     return;
                 default:
                     System.out.println("Invalid option. Please try again.");
@@ -382,8 +383,6 @@ public class MainApp {
     }
 
     // Admin functionality: Reset user preferences
-
-
     public static void resetUserPreferences() {
     System.out.print("Enter the username of the user whose preferences you want to reset: ");
     String username = scanner.nextLine();
@@ -496,36 +495,34 @@ public class MainApp {
     }
 }
 
-// Helper method to print colored text
-public static void printColoredText(String text, String colorCode) {
-    System.out.println(colorCode + text + "\033[0m");  // Reset to default color after printing
-}
+   //To receive colored test in console to make it attractive
+    public static void printColoredText(String text, String colorCode) {
+        System.out.println(colorCode + text + "\033[0m");  // Reset to default color after printing
+    }
 
-// Helper method to format content into paragraphs
-public static void printFormattedContent(String content) {
-    int maxLineLength = 80; // Maximum line length before wrapping
-    String[] words = content.split(" ");
-    StringBuilder line = new StringBuilder();
 
-    for (String word : words) {
-        if (line.length() + word.length() + 1 > maxLineLength) {
-            System.out.println(line.toString()); // Print the line
-            line = new StringBuilder(word); // Start a new line with the current word
-        } else {
-            if (line.length() > 0) {
-                line.append(" "); // Add space between words
+    public static void printFormattedContent(String content) {
+        int maxLineLength = 80; // Maximum line length before wrapping
+        String[] words = content.split(" ");
+        StringBuilder line = new StringBuilder();
+
+        for (String word : words) {
+            if (line.length() + word.length() + 1 > maxLineLength) {
+                System.out.println(line.toString()); // Print the line
+                line = new StringBuilder(word); // Start a new line with the current word
+            } else {
+                if (line.length() > 0) {
+                    line.append(" "); // Add space between words
+                }
+                line.append(word);
             }
-            line.append(word);
+        }
+
+        // Print the last line if any content remains
+        if (line.length() > 0) {
+            System.out.println(line.toString());
         }
     }
-
-    // Print the last line if any content remains
-    if (line.length() > 0) {
-        System.out.println(line.toString());
-    }
-}
-
-
 
 
     public static void getRecommendations() {
@@ -602,7 +599,5 @@ public static void printFormattedContent(String content) {
     public static void setAvailableArticles(List<Article> articles) {
     MainApp.availableArticles = articles;
 }
-
-
 
 }
