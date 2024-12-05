@@ -17,7 +17,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import main.newsapp.utils.FileHandler;
-import opennlp.tools.tokenize.SimpleTokenizer;
+
+//This class manages the file handling, concurrency, nlp tools
+//categorizes multiple articles simultaneously
 
 public class ArticleFetcher {
     private List<Article> articles;
@@ -93,19 +95,6 @@ public class ArticleFetcher {
         }
     }
 
-
-
-    // Helper method to check for any matching keywords
-    public boolean containsKeywords(String[] tokens, String[] keywords) {
-        for (String token : tokens) {
-            for (String keyword : keywords) {
-                if (token.equals(keyword)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
     public void setArticles(List<Article> testArticles) {
         this.articles = testArticles;

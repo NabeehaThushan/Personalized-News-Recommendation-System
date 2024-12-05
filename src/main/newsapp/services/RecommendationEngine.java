@@ -6,9 +6,9 @@ import main.newsapp.models.User;
 import main.newsapp.utils.DatabaseHandler;
 
 import main.newsapp.utils.DatabaseService;
-import opennlp.tools.tokenize.SimpleTokenizer;
+
 import weka.classifiers.Classifier;
-import weka.classifiers.trees.J48;
+
 import weka.core.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,22 +16,19 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 import java.io.FileReader;
 import java.util.*;
-import java.util.concurrent.CompletableFuture;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
-
-import static main.newsapp.models.User.executorService;
 
 public class RecommendationEngine {
     private static final Logger logger = LoggerFactory.getLogger(RecommendationEngine.class);
 
     private List<Article> availableArticles;
     private DatabaseService databaseService;
-    private Classifier mlModel;
     private ExecutorService executorService;
-     // Flag to toggle ML-based recommendation or not
+
 
     public RecommendationEngine(List<Article> availableArticles, DatabaseService databaseService) {
         this.availableArticles = availableArticles;
@@ -44,13 +41,7 @@ public class RecommendationEngine {
 
     // Update user preferences based on their reading history
     public void updateUserPreference(User user) {
-//        Map<Category, Integer> preferences = user.getPreferences().getAllPreferences();
-//        for (Article article : user.getReadingHistory()) {
-//            Category category = categorizeWithNLP(article.getContentOfArticle());
-//            preferences.merge(category, 1, Integer::sum);  // Increment preference score
-//        }
-//        user.getPreferences().setAllPreferences(preferences);
-//        databaseService.storePreferences(user);
+
         for (Article article : user.getReadingHistory()) {
             user.getPreferences().addCategory(article.getCategory());
         }
@@ -74,28 +65,17 @@ public class RecommendationEngine {
     }
 }
 
-    private Category categorizeWithNLP(String content) {
-    SimpleTokenizer tokenizer = SimpleTokenizer.INSTANCE;
-    String[] tokens = tokenizer.tokenize(content.toLowerCase());
 
-    for (Category category : Category.values()) {
-        if (containsKeywords(tokens, category.getKeywords())) {
-            return category; // Return the first matching category
+
+        // Helper method to check if any tokens match a category's keywords
+        private boolean containsKeywords(String[] tokens, List<String> keywords) {
+            for (String token : tokens) {
+                if (keywords.contains(token)) {
+                    return true;
+                }
+            }
+            return false;
         }
-    }
-
-    return Category.GENERAL; // Default to General if no match
-}
-
-// Helper method to check if any tokens match a category's keywords
-private boolean containsKeywords(String[] tokens, List<String> keywords) {
-    for (String token : tokens) {
-        if (keywords.contains(token)) {
-            return true;
-        }
-    }
-    return false;
-}
 
 
     // Get articles based on user preferences (Content-based filtering)
@@ -159,52 +139,14 @@ private boolean containsKeywords(String[] tokens, List<String> keywords) {
                     .noneMatch(read -> read.getId().equals(article.getId())))
             .collect(Collectors.toList());
 
-    // Step 5: Limit recommendations to 5 and return
+    // Step 5: Limit recommendations to 5 (or 7) and return
     return filteredRecommendations.stream()
             .distinct() // Ensure no duplicates
-            .limit(7) // Limit recommendations to 5
-            .collect(Collectors.toList());
-}
-
-    private List<Article> getArticlesByKNN(User user) {
-    List<Article> recommendations = new ArrayList<>();
-    Map<Category, Integer> preferences = user.getPreferences().getAllPreferences();
-
-    preferences.entrySet().stream()
-            .sorted(Map.Entry.<Category, Integer>comparingByValue().reversed())
-            .limit(3) // Consider top 3 categories
-            .forEach(entry -> {
-                Category category = entry.getKey();
-                recommendations.addAll(availableArticles.stream()
-                        .filter(article -> article.getCategory() == category)
-                        .collect(Collectors.toList()));
-            });
-
-    return recommendations.stream()
-            .distinct()
-            .limit(5) // Limit recommendations to 5
+            .limit(7) // Limit recommendations to 7
             .collect(Collectors.toList());
 }
 
 
-
-    // Rank articles by ML model if available
-    private List<Article> rankArticlesByML(List<Article> articles) {
-        try {
-            Instances dataset = loadArffDataset();
-            for (Article article : articles) {
-                Instance instance = new DenseInstance(dataset.numAttributes());
-                instance.setValue(dataset.attribute("length"), article.getContentOfArticle().length());
-                instance.setValue(dataset.attribute("category"), article.getCategory().name());
-                dataset.add(instance);
-                double priority = mlModel.classifyInstance(dataset.lastInstance());
-                article.setCategory(Category.values()[(int) priority]); // Set article priority based on ML
-            }
-        } catch (Exception e) {
-            logger.error("Error in ranking articles using ML model: {}", e.getMessage());
-        }
-        return articles;
-    }
 
     // Load ARFF dataset for ML-based prediction
     private Instances loadArffDataset() throws Exception {
@@ -214,16 +156,16 @@ private boolean containsKeywords(String[] tokens, List<String> keywords) {
         return dataset;
     }
 
-    /**
-     * Processes articles concurrently, categorizing them for recommendation.
-     */
+
+     //Processes articles concurrently, categorizing them for recommendation.
+
     public void processArticles() {
         executorService.submit(() -> availableArticles.forEach(this::categorizeArticle));
     }
 
-    /**
-     * Shuts down the executor service used for concurrency.
-     */
+
+     //Shuts down the executor service used for concurrency.
+
     public void shutDown() {
         executorService.shutdown();
         try {
