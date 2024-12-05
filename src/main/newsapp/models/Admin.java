@@ -43,13 +43,31 @@ public void removeArticle(List<Article> articles, String articleId) {
 //Iterates through the user's reading history and prints the titles
 // and categories of articles they've read.
     public void viewUserActivity(User user) {
-        System.out.println("Viewing activity for user: " + user.getUserName());
-        System.out.println("Reading History:");
-        for (Article article : user.getReadingHistory()) {
-            System.out.println(" - " + article.getTitle() + " (" + article.getCategory() + ")");
-        }
+    if (user == null || user.getUserName() == null || user.getUserName().isEmpty()) {
+        System.out.println("Invalid user. Please provide a valid user.");
+        return;
+    }
+
+    System.out.println("Viewing activity for user: " + user.getUserName());
+
+//    // Check if reading history is empty
+//    if (user.getReadingHistory() == null || user.getReadingHistory().isEmpty()) {
+//        System.out.println("Reading History: No articles found.");
+//    } else {
+//        System.out.println("Reading History:");
+//        for (Article article : user.getReadingHistory()) {
+//            System.out.println(" - " + article.getTitle() + " (" + article.getCategory() + ")");
+//        }
+//    }
+
+    // Display user preferences
+    if (user.getPreferences() == null || user.getPreferences().getAllPreferences().isEmpty()) {
+        System.out.println("User Preferences: No preferences set.");
+    } else {
         System.out.println("User Preferences: " + user.getPreferences());
     }
+}
+
 
    // Creates a new UserPreference object and assigns it to the user.
     public void resetUserPreferences(User user) {

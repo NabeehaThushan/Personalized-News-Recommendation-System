@@ -22,8 +22,6 @@ import org.json.JSONObject;
 
 public class FileHandler {
     private static final String FILE_PATH = "src/articles.json";
-    private List<Article> articles;
-    private static final String BACKUP_FILE_PATH = "src/articles_backup.json";
     private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
     private static final Logger logger = LoggerFactory.getLogger(FileHandler.class);
 

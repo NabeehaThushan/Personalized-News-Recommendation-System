@@ -44,6 +44,7 @@ public class User {
     }
 
     public List<Article> getReadingHistory() {
+        logger.debug("Fetching reading history for user: {}", userName);
         return readingHistory;
     }
 

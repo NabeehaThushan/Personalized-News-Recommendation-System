@@ -376,6 +376,7 @@ public class MainApp {
         try {
             User user = new User(username, ""); // Temporary user object
             dbService.loadReadingHistory(user, availableArticles);
+            dbService.loadPreferences(user);
             admin.viewUserActivity(user);
         } catch (Exception e) {
             System.out.println("Error viewing user activity: " + e.getMessage());

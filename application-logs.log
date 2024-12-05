@@ -1052,3 +1052,163 @@ java.nio.file.FileAlreadyExistsException: src\articles_backup.json
 2024-12-04 22:42:43 INFO  main.newsapp.models.User - User3 logged in successfully.
 2024-12-04 22:42:43 INFO  main.newsapp.models.User - User4 logged in successfully.
 2024-12-04 22:42:56 INFO  main.newsapp.models.User - amie logged in successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:15:03 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:15:03 INFO  main.newsapp.utils.FileHandler - Successfully fetched 34 articles from file.
+2024-12-05 14:15:03 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:15:03 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:16:52 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-05 14:16:52 INFO  main.newsapp.models.Admin - Admin added a new article: w
+2024-12-05 14:16:52 ERROR main.newsapp.utils.FileHandler - Error creating backup file: src/articles_backup.json
+java.nio.file.FileAlreadyExistsException: src\articles_backup.json
+	at java.base/sun.nio.fs.WindowsFileCopy.copy(WindowsFileCopy.java:133)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.copy(WindowsFileSystemProvider.java:282)
+	at java.base/java.nio.file.Files.copy(Files.java:1304)
+	at main.newsapp.utils.FileHandler.backupArticlesFile(FileHandler.java:98)
+	at main.newsapp.main.MainApp.addArticle(MainApp.java:353)
+	at main.newsapp.main.MainApp.showAdminMenu(MainApp.java:303)
+	at main.newsapp.main.MainApp.adminLogin(MainApp.java:284)
+	at main.newsapp.main.MainApp.showLoginRegisterMenu(MainApp.java:183)
+	at main.newsapp.main.MainApp.main(MainApp.java:39)
+2024-12-05 14:16:52 INFO  main.newsapp.utils.FileHandler - Articles successfully saved to file: src/articles.json
+2024-12-05 14:18:11 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:18:11 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:18:11 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:18:11 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:18:11 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:18:11 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:18:11 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:18:11 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:18:11 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:18:27 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:18:27 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:18:27 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:18:27 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:19:25 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:19:25 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:19:25 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:19:25 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:19:26 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:19:26 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:19:26 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:19:26 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:19:27 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:19:27 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:19:27 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:19:27 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:19:28 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:19:28 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:28 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:19:28 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:19:28 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:19:29 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:19:29 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:19:29 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:19:29 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:19:30 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:19:30 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:19:30 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:19:30 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 14:20:32 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 14:20:32 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 14:20:32 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 14:20:32 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 15:23:03 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 15:23:03 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 15:23:03 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 15:23:03 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 15:23:12 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 15:23:12 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 15:23:12 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 15:23:12 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 15:24:18 INFO  main.newsapp.models.User - amy logged in successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 15:24:30 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 15:24:30 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 15:24:30 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 15:24:30 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 15:24:46 INFO  main.newsapp.models.User - felix has registered successfully.
+2024-12-05 15:24:53 INFO  main.newsapp.models.User - Added to reading history: Solar Power Innovations: The Next Big Thing
+2024-12-05 15:24:53 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user felix: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-12-05 15:24:55 INFO  main.newsapp.models.User - Recorded interaction for article: Solar Power Innovations: The Next Big Thing | Feedback: 4
+2024-12-05 15:25:20 INFO  main.newsapp.models.User - Added to reading history: Solar Power Innovations: The Next Big Thing
+2024-12-05 15:25:20 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user felix: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-12-05 15:29:46 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 15:29:46 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 15:29:46 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 15:29:46 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 15:29:46 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 15:29:46 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 15:29:46 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:29:46 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 15:29:46 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 15:31:51 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 15:31:51 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 15:31:51 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 15:31:51 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 19:28:23 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 19:28:23 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 19:28:23 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 19:28:23 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 19:30:25 INFO  main.newsapp.models.User - lisa logged in successfully.
+2024-12-05 19:30:51 INFO  main.newsapp.models.User - Added to reading history: Health Tips
+2024-12-05 19:30:51 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user lisa: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-12-05 19:30:56 INFO  main.newsapp.models.User - Recorded interaction for article: Health Tips | Feedback: 4
