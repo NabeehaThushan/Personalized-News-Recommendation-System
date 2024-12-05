@@ -519,7 +519,6 @@ public class MainApp {
             }
         }
 
-        // Print the last line if any content remains
         if (line.length() > 0) {
             System.out.println(line.toString());
         }

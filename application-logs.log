@@ -1212,3 +1212,43 @@ java.nio.file.FileAlreadyExistsException: src\articles_backup.json
 2024-12-05 19:30:51 INFO  main.newsapp.models.User - Added to reading history: Health Tips
 2024-12-05 19:30:51 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user lisa: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
 2024-12-05 19:30:56 INFO  main.newsapp.models.User - Recorded interaction for article: Health Tips | Feedback: 4
+2024-12-05 19:34:57 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 19:34:57 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 19:34:57 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 19:34:57 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 19:34:57 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 19:34:57 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 19:34:57 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 19:34:57 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-05 19:34:57 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-05 23:35:39 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-05 23:35:39 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-05 23:35:39 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-05 23:35:39 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-06 00:08:13 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-06 00:08:13 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-06 00:08:13 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-06 00:08:13 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.utils.DatabaseHandler - Attempting to create tables...
+2024-12-06 00:13:39 INFO  main.newsapp.utils.DatabaseHandler - Tables created successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.utils.FileHandler - Fetching articles from file: src/articles.json
+2024-12-06 00:13:39 INFO  main.newsapp.utils.FileHandler - Successfully fetched 35 articles from file.
+2024-12-06 00:13:39 INFO  main.newsapp.models.User - User1 logged in successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.models.User - User4 logged in successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.models.User - User5 logged in successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.models.User - User2 logged in successfully.
+2024-12-06 00:13:39 INFO  main.newsapp.models.User - User3 logged in successfully.
+2024-12-06 00:14:37 INFO  main.newsapp.models.User - felix logged in successfully.
+2024-12-06 00:15:01 INFO  main.newsapp.models.User - Added to reading history: Health Tips
+2024-12-06 00:15:01 ERROR main.newsapp.utils.DatabaseHandler - Error storing reading history for user felix: [SQLITE_ERROR] SQL error or missing database (table reading_history has no column named article_name)
+2024-12-06 00:15:12 INFO  main.newsapp.models.User - Recorded interaction for article: Health Tips | Feedback: 5
