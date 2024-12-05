@@ -1,6 +1,5 @@
 package main.newsapp.models;
 
-import main.newsapp.services.RecommendationEngine;
 import main.newsapp.utils.DatabaseService;
 import main.newsapp.utils.FileHandler;
 import org.slf4j.Logger;
@@ -8,11 +7,12 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-import java.util.List;
+//Inheritance
+//Admin inherits the properties of user
 
 public class Admin extends User {
     private static DatabaseService dbService;
-    private static final Logger logger = LoggerFactory.getLogger(Admin.class);
+    private static final Logger logger = LoggerFactory.getLogger(Admin.class);//SLF4J library
 
     public Admin(String username, String password) {
         super(username, password);
@@ -40,7 +40,8 @@ public void removeArticle(List<Article> articles, String articleId) {
     }
 }
 
-
+//Iterates through the user's reading history and prints the titles
+// and categories of articles they've read.
     public void viewUserActivity(User user) {
         System.out.println("Viewing activity for user: " + user.getUserName());
         System.out.println("Reading History:");
@@ -50,11 +51,12 @@ public void removeArticle(List<Article> articles, String articleId) {
         System.out.println("User Preferences: " + user.getPreferences());
     }
 
+   // Creates a new UserPreference object and assigns it to the user.
     public void resetUserPreferences(User user) {
         user.setPreferences(new UserPreference());
         System.out.println("User preferences reset for: " + user.getUserName());
     }
-
+//iterates through the list of articles and prints their details.
     public void listAllArticles(List<Article> articles) {
         System.out.println("Listing all articles:");
         for (Article article : articles) {
