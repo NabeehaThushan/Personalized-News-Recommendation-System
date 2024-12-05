@@ -23,15 +23,16 @@ public class User {
     private List<Article> readingHistory;
     private UserPreference preferences;
     private Map<Article, String> interactions;
-
+//Thread pool for handling concurrent operation like login and registration
     public static final ExecutorService executorService = Executors.newCachedThreadPool();
+
 
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
         this.readingHistory = new ArrayList<>();
-        this.preferences = new UserPreference();
-        this.interactions = new HashMap<>();
+        this.preferences = new UserPreference();//default preferences
+        this.interactions = new HashMap<>();//this starts with an empty interaction map
     }
 
     public String getUserName() {
@@ -68,7 +69,9 @@ public class User {
         this.preferences = preferences;
         logger.info("User preferences updated.");
     }
-
+    //Checks if the user exists in the database
+    //The below method hides the internal logic of how database checks are performed bcz we are using dbservice here so
+    //theres abstarction happening in this method
     public boolean login(DatabaseService dbService) throws UserNotFoundException, IncorrectPasswordException {
         boolean userExists = dbService.userExists(this.userName);
         if (!userExists) {
@@ -84,6 +87,7 @@ public class User {
         return true;
     }
 
+    //Ensures that duplicate users cannot register and performs the logging for the event
     public void register(DatabaseService dbService) throws DuplicateUserException {
         boolean userExists = dbService.userExists(this.userName);
         if (userExists) {
@@ -114,6 +118,8 @@ public class User {
         }));
     }
 
+    //this records when the user gives the rating and also synchronized bcz to
+    //ensure thread safety
     public synchronized void recordInteraction(Article article, String feedback) {
         interactions.put(article, feedback);
         preferences.addCategory(article.getCategory());

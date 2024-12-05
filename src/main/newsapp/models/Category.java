@@ -2,6 +2,7 @@ package main.newsapp.models;
 
 import java.util.Arrays;
 import java.util.List;
+//this is a java construct class used to represent collection of constants
 
 public enum Category {
     TECHNOLOGY("Technology", Arrays.asList("technology", "ai", "machine learning", "innovation", "robotics", "customer service")),
@@ -12,13 +13,13 @@ public enum Category {
     ENTERTAINMENT("Entertainment", Arrays.asList("movies", "celebrities", "music", "entertainment", "television", "gaming")),
     POLITICS("Politics", Arrays.asList("election", "government", "policy", "politics", "voting", "democracy")),
     SCIENCE("Science", Arrays.asList("quantum", "physics", "biology", "research", "chemistry", "astronomy")),
-    GENERAL("General", Arrays.asList("news", "updates", "headlines", "latest")), // General category for miscellaneous topics
+    GENERAL("General", Arrays.asList("news", "updates", "headlines", "latest")), // General category for miscellaneous topics //fallback category
     EDUCATION("Education", Arrays.asList("learning", "schools", "courses", "teaching", "college", "university", "online learning")),
     SPACE("Space", Arrays.asList("space", "mars", "planets", "nasa", "astronomy", "star", "rocket", "exploration")),
     FINANCE("Finance", Arrays.asList("economy", "cryptocurrency", "stocks", "market", "financial", "investment", "banks")),
     SOCIAL_ISSUES("Social Issues", Arrays.asList("human rights", "equality", "justice", "poverty", "climate change", "community", "leadership")),
     ENVIRONMENT("Environment", Arrays.asList("climate change", "sustainability", "green energy", "recycling", "pollution", "conservation"));
-
+//fields are immutable
     private final String displayName;
     private final List<String> keywords;
 

@@ -2,17 +2,21 @@ package main.newsapp.models;
 import java.util.Date;
 import java.util.UUID;
 
+ //Encapsulation takes place
+//SRP
+// ITS INSTANCE VARIABLES
 public class Article {
     private String id;
     private String title;
     private String description;
     private String contentOfArticle;
-    private Category category;
+    private Category category;//aggregation takes place
     private String source;
     private Date publishedDate;
 
+   //CONSTRUCTOR
     public Article(String title, String description, String contentOfArticle, Category category, String source, Date publishedDate) {
-        this.id = UUID.randomUUID().toString();
+        this.id = UUID.randomUUID().toString(); //to ensure no 2 articles hv the same
         this.title = title;
         this.description = description;
         this.contentOfArticle = contentOfArticle;
